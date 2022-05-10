@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AndroidLessons</string>
+    <string name="hello">Hello</string>
+    <string name="name_noro">i am Norayr Stepanyan</string>
+    <string name="name_hayk">i am Hayk Tadevosyan</string>
+    <string name="click">Close</string>
+    <string name="click2">Open</string>
+    <string name="helloWorld">hello World</string>
+    <string name="hello_hayk">Hello Hayj</string>
+    <string name="hello_noro">Hello Noro</string>
+    <string name="name">Name</string>
+    <string name="ok">Ok</string>
+    <string name="surname">Surname</string>
+    <string name="back">To Back</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="enter">Enter</string>
+
+
+</resources>

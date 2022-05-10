@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+
+    <ImageView
+        android:id="@+id/animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/android"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+
+    <Button
+        android:id="@+id/enter_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter"
+
+        app:layout_constraintBottom_toBottomOf="@+id/animal"
+        app:layout_constraintEnd_toEndOf="@+id/animal"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/animal"
+        app:layout_constraintTop_toTopOf="@+id/animal"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <TextView
+        android:id="@+id/hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        app:layout_constraintBottom_toTopOf="@+id/enter_button1"
+        android:textSize="50sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
+
+
+    <TextView
+        android:id="@+id/number11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="90sp"
+        app:layout_constraintBottom_toBottomOf="@+id/animal"
+        app:layout_constraintEnd_toEndOf="@+id/animal"
+        app:layout_constraintStart_toStartOf="@+id/animal"
+        app:layout_constraintTop_toTopOf="@+id/animal"
+        app:layout_constraintVertical_bias="0.48" />
+
+    <TextView
+        android:id="@+id/minus"
+        android:layout_width="39dp"
+        android:layout_height="169dp"
+        android:text="@string/minus"
+        android:textColor="@color/white"
+        android:textSize="130sp"
+        app:layout_constraintBottom_toBottomOf="@+id/animal"
+        app:layout_constraintEnd_toEndOf="@+id/animal"
+        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toStartOf="@+id/animal"
+        app:layout_constraintTop_toTopOf="@+id/animal"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <TextView
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus"
+        android:textColor="@color/white"
+        android:textSize="90sp"
+        app:layout_constraintBottom_toBottomOf="@+id/animal"
+        app:layout_constraintEnd_toEndOf="@+id/animal"
+        app:layout_constraintHorizontal_bias="0.713"
+        app:layout_constraintStart_toStartOf="@+id/animal"
+        app:layout_constraintTop_toTopOf="@+id/animal"
+        app:layout_constraintVertical_bias="0.48" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
