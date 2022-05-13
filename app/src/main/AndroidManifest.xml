@@ -5,12 +5,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLessons">
         <activity
-            android:name=".MainActivity"
+            android:name=".GoogleActivity4"
             android:exported="false" />
         <activity
             android:name=".MainActivity3"
@@ -20,6 +20,18 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity4"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GoogleActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".GoogleActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".GoogleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

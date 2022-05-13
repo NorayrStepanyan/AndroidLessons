@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/animal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/android"
         tools:layout_editor_absoluteX="0dp"
@@ -73,6 +73,21 @@
         app:layout_constraintStart_toStartOf="@+id/animal"
         app:layout_constraintTop_toTopOf="@+id/animal"
         app:layout_constraintVertical_bias="0.454" />
+
+
+
+    <TextView
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home"
+        android:textColor="@color/yellow"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/animal"
+        app:layout_constraintTop_toTopOf="@+id/animal"
+        app:layout_constraintVertical_bias="0.909" />
 
     <TextView
         android:id="@+id/plus"

@@ -1,5 +1,6 @@
 package com.example.androidlessons
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,6 +17,7 @@ class MainActivity2 : AppCompatActivity() {
         val plus = findViewById<TextView>(R.id.plus)
         val minus = findViewById<TextView>(R.id.minus)
         val number = findViewById<TextView>(R.id.number11)
+        val home = findViewById<TextView>(R.id.home)
         var check = true
 
 
@@ -37,6 +39,12 @@ class MainActivity2 : AppCompatActivity() {
         minus.setOnClickListener {
             number.text = number.text.toString().toInt().minus(1).toString()
 
+        }
+
+
+        home.setOnClickListener {
+            val intent = Intent(this, MainActivity4::class.java)
+            startActivity(intent)
         }
     }
 }

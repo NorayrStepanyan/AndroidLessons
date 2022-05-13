@@ -9,12 +9,26 @@
     <string name="hello_hayk">Hello Hayj</string>
     <string name="hello_noro">Hello Noro</string>
     <string name="name">Name</string>
-    <string name="ok">Ok</string>
+    <string name="buttonOk">Ok</string>
     <string name="surname">Surname</string>
-    <string name="back">To Back</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="enter">Enter</string>
+    <string name="next"><![CDATA[next->]]></string>
+    <string name="back"><![CDATA[<-back]]></string>
+    <string name="buttonBack">back</string>
+    <string name="home">Home</string>
+    <string name="please_sedge_to_start_the_registration">Please sedge to GOOGLE the registration</string>
+    <string name="start">START</string>
+    <string name="todo">TODO</string>
+    <string name="please_fill_in_your_first_and_last_name">Please fill in your first and last name</string>
+    <string name="hello_user">HELLO USER</string>
+    <string name="email">Your Email</string>
+    <string name="gmail_com">gmail.com</string>
+    <string name="please_write_your_email">Please write your Email</string>
+    <string name="you_already_have_a_new_email">You already have a new Email</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="new_email">(Click home to create a new one)</string>
 
 
 </resources>
