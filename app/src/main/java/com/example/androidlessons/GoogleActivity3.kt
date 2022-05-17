@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 
 class GoogleActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,11 +24,17 @@ class GoogleActivity3 : AppCompatActivity() {
 
 
         bottomNext.setOnClickListener {
-            val intent = Intent(this, GoogleActivity4::class.java)
-            intent.putExtra("googleEmail", email)
-            intent.putExtra("googleEditName2", googleEditName.toString())
-            intent.putExtra("googleEditSurName2", googleEditSurName.toString())
-            startActivity(intent)
+            if (email.isNotEmpty()) {
+                val intent = Intent(this, GoogleActivity4::class.java)
+                intent.putExtra("googleEmail", email)
+                intent.putExtra("googleEditName2", googleEditName.toString())
+                intent.putExtra("googleEditSurName2", googleEditSurName.toString())
+                startActivity(intent)
+            } else {
+                val alert = AlertDialog.Builder(this)
+                alert.setMessage("please enter email field").setCancelable(true)
+                alert.show()
+            }
         }
 
 

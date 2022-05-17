@@ -1,12 +1,15 @@
 package com.example.androidlessons
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 
 class GoogleActivity2 : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
@@ -20,15 +23,31 @@ class GoogleActivity2 : AppCompatActivity() {
         val bottomNext1 = findViewById<ImageView>(R.id.bottomNext1)
         val name2 = googleName.text
         val surName2 = googleSurName.text
-        googleName.setTextColor(getColor(R.color.red))
 
+        googleName.setOnFocusChangeListener { view, focus ->
+            if (focus) {
+                googleName.setBackgroundColor(getColor(R.color.transparent))
+            }
+        }
+
+
+        googleSurName.setOnFocusChangeListener { view, focus ->
+            if (focus) {
+                googleSurName.setBackgroundColor(getColor(R.color.transparent))
+            }
+        }
 
 
         bottomNext1.setOnClickListener {
-            val intent3 = Intent(this, GoogleActivity3::class.java)
-            intent3.putExtra("googleEditName", name2)
-            intent3.putExtra("googleEditSurName", surName2)
-            startActivity(intent3)
+            if (name2.isEmpty() || surName2.isEmpty()) {
+                if (name2.isEmpty()) googleName.setBackgroundColor(getColor(R.color.lightRed))
+                if (surName2.isEmpty()) googleSurName.setBackgroundColor(getColor(R.color.lightRed))
+            } else {
+                val intent3 = Intent(this, GoogleActivity3::class.java)
+                intent3.putExtra("googleEditName", name2)
+                intent3.putExtra("googleEditSurName", surName2)
+                startActivity(intent3)
+            }
         }
 
 
@@ -36,5 +55,6 @@ class GoogleActivity2 : AppCompatActivity() {
             val intent2 = Intent(this, GoogleActivity::class.java)
             startActivity(intent2)
         }
+
     }
 }
