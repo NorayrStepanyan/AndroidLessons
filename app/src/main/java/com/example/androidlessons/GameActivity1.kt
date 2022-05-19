@@ -1,5 +1,6 @@
 package com.example.androidlessons
 
+import android.annotation.SuppressLint
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,10 +8,9 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import org.w3c.dom.Text
-import kotlin.math.ceil
 
 class GameActivity1 : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,14 +24,13 @@ class GameActivity1 : AppCompatActivity() {
         val answer3 = findViewById<TextView>(R.id.answer3)
         val answer4 = findViewById<TextView>(R.id.answer4)
         val counter = findViewById<TextView>(R.id.counter)
-        val End = findViewById<TextView>(R.id.end)
+        val end = findViewById<TextView>(R.id.end)
         val buttonRestart = findViewById<ImageView>(R.id.restart)
-        End.setText("Դուք հավաքել եք $counter միավոր")
-        val text = End
+        end.text = "Դուք հավաքել եք $counter միավոր"
         var number = 0
 
         buttonRestart.setBackgroundColor(getColor(R.color.game1))
-        End.visibility = View.INVISIBLE
+        end.visibility = View.INVISIBLE
         buttonRestart.visibility = View.INVISIBLE
         counter.visibility = View.INVISIBLE
         answer1.visibility = View.INVISIBLE
@@ -48,215 +47,247 @@ class GameActivity1 : AppCompatActivity() {
             answer4.visibility = View.VISIBLE
             question.visibility = View.VISIBLE
             buttonStart.visibility = View.INVISIBLE
-            question.setText("Ով մատնեց Հիսուսին")
-            answer1.setText("Հուդան")
-            answer2.setText("Մատթեոսը")
-            answer3.setText("Թովմասը")
-            answer4.setText("Պետրոսը")
+            question.text = "Ով մատնեց Հիսուսին"
+            answer1.text = "Հուդան"
+            answer2.text = "Մատթեոսը"
+            answer3.text = "Թովմասը"
+            answer4.text = "Պետրոսը"
         }
 
         buttonRestart.setOnClickListener {
             number = 0
             counter.text = counter.text.toString().toInt().div(1000).toString()
-            text.visibility = View.INVISIBLE
+            end.visibility = View.INVISIBLE
             buttonRestart.visibility = View.INVISIBLE
             buttonStart.visibility = View.VISIBLE
         }
 
         answer1.setOnClickListener {
-            if (number == 0) {
-                counter.text = counter.text.toString().toInt().plus(5).toString()
-                question.setText("Ով ուրացավ Հիսուսին")
-                answer1.setText("Թովմասը")
-                answer2.setText("Սողոսը")
-                answer3.setText("Պետրոսը")
-                answer4.setText("Հուդան")
-                number += 1
-            } else if (number == 1) {
-                question.setText("Ում մասին էր վկայում Հիսուսը <Ճշմարիտ ասում եմ ձեզ այստեղ կանգնածներից ոմանք կան,որ մահ չեն տեսնի, մինչև որ չտեսնեն Աստծո արքայությունը եկած")
-                answer1.setText("Հովնանի")
-                answer2.setText("Հովհաննեսի")
-                answer3.setText("Պիսկիղայի")
-                answer4.setText("Անանիայի")
-                number += 1
-            } else if (number == 2) {
-                answer1.setText("130")
-                answer2.setText("100")
-                answer3.setText("125")
-                answer4.setText("120")
-                number += 1
-            } else if (number == 3) {
-                question.setText("Քանի որդի ուներ Նոյը")
-                answer1.setText("1")
-                answer2.setText("5")
-                answer3.setText("10")
-                answer4.setText("3")
-                number += 1
-            } else if (number == 4) {
-                question.setText("ինչ էր այն ծառայի անունը որի ականջը կտրեց Պետրոսը")
-                answer1.setText("Բէովր")
-                answer2.setText("Ամրամ")
-                answer3.setText("Նավե")
-                answer4.setText("Մաղքոս")
-                number += 1
-            } else if (number == 5) {
-                text.visibility = View.VISIBLE
-                buttonRestart.visibility = View.VISIBLE
-                answer1.visibility = View.INVISIBLE
-                answer2.visibility = View.INVISIBLE
-                answer3.visibility = View.INVISIBLE
-                answer4.visibility = View.INVISIBLE
-                question.visibility = View.INVISIBLE
-                buttonStart.visibility = View.INVISIBLE
+            when (number) {
+                0 -> {
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    question.text = "Ով ուրացավ Հիսուսին"
+                    answer1.text = "Թովմասը"
+                    answer2.text = "Սողոսը"
+                    answer3.text = "Պետրոսը"
+                    answer4.text = "Հուդան"
+                    number += 1
+                }
+                1 -> {
+                    question.text =
+                        "Ում մասին էր վկայում Հիսուսը <Ճշմարիտ ասում եմ ձեզ այստեղ կանգնածներից ոմանք կան,որ մահ չեն տեսնի, մինչև որ չտեսնեն Աստծո արքայությունը եկած"
+                    answer1.text = "Հովնանի"
+                    answer2.text = "Հովհաննեսի"
+                    answer3.text = "Պիսկիղայի"
+                    answer4.text = "Անանիայի"
+                    number += 1
+                }
+                2 -> {
+                    answer1.text = "130"
+                    answer2.text = "100"
+                    answer3.text = "125"
+                    answer4.text = "120"
+                    number += 1
+                }
+                3 -> {
+                    question.text = "Քանի որդի ուներ Նոյը"
+                    answer1.text = "1"
+                    answer2.text = "5"
+                    answer3.text = "10"
+                    answer4.text = "3"
+                    number += 1
+                }
+                4 -> {
+                    question.text = "ինչ էր այն ծառայի անունը որի ականջը կտրեց Պետրոսը"
+                    answer1.text = "Բէովր"
+                    answer2.text = "Ամրամ"
+                    answer3.text = "Նավե"
+                    answer4.text = "Մաղքոս"
+                    number += 1
+                }
+                5 -> {
+                    end.visibility = View.VISIBLE
+                    buttonRestart.visibility = View.VISIBLE
+                    answer1.visibility = View.INVISIBLE
+                    answer2.visibility = View.INVISIBLE
+                    answer3.visibility = View.INVISIBLE
+                    answer4.visibility = View.INVISIBLE
+                    question.visibility = View.INVISIBLE
+                    buttonStart.visibility = View.INVISIBLE
+                }
             }
         }
 
         answer2.setOnClickListener {
-            if (number == 0) {
-                question.setText("Ով ուրացավ Հիսուսին")
-                answer1.setText("Թովմասը")
-                answer2.setText("Սողոսը")
-                answer3.setText("Պետրոսը")
-                answer4.setText("Հուդան")
-                number += 1
-            } else if (number == 1) {
-                question.setText("Ում մասին էր վկայում Հիսուսը <Ճշմարիտ ասում եմ ձեզ այստեղ կանգնածներից ոմանք կան,որ մահ չեն տեսնի, մինչև որ չտեսնեն Աստծո արքայությունը եկած")
-                answer1.setText("Հովնանի")
-                answer2.setText("Հովհաննեսի")
-                answer3.setText("Պիսկիղայի")
-                answer4.setText("Անանիայի")
-                number += 1
-            } else if (number == 2) {
-                counter.text = counter.text.toString().toInt().plus(5).toString()
-                question.setText("Քանի տարեկանում մահացավ Մովսեսը")
-                answer1.setText("130")
-                answer2.setText("100")
-                answer3.setText("125")
-                answer4.setText("120")
-                number += 1
-            } else if (number == 3) {
-                question.setText("Քանի որդի ուներ Նոյը")
-                answer1.setText("1")
-                answer2.setText("5")
-                answer3.setText("10")
-                answer4.setText("3")
-                number += 1
-            } else if (number == 4) {
-                question.setText("ինչ էր այն ծառայի անունը որի ականջը կտրեց Պետրոսը")
-                answer1.setText("Բէովր")
-                answer2.setText("Ամրամ")
-                answer3.setText("Նավե")
-                answer4.setText("Մաղքոս")
-                number += 1
-            } else if (number == 5) {
-                text.visibility = View.VISIBLE
-                buttonRestart.visibility = View.VISIBLE
-                answer1.visibility = View.INVISIBLE
-                answer2.visibility = View.INVISIBLE
-                answer3.visibility = View.INVISIBLE
-                answer4.visibility = View.INVISIBLE
-                question.visibility = View.INVISIBLE
-                buttonStart.visibility = View.INVISIBLE
+            when (number) {
+                0 -> {
+                    question.text = "Ով ուրացավ Հիսուսին"
+                    answer1.text = "Թովմասը"
+                    answer2.text = "Սողոսը"
+                    answer3.text = "Պետրոսը"
+                    answer4.text = "Հուդան"
+                    number += 1
+                }
+                1 -> {
+                    question.text =
+                        "Ում մասին էր վկայում Հիսուսը <Ճշմարիտ ասում եմ ձեզ այստեղ կանգնածներից ոմանք կան,որ մահ չեն տեսնի, մինչև որ չտեսնեն Աստծո արքայությունը եկած"
+                    answer1.text = "Հովնանի"
+                    answer2.text = "Հովհաննեսի"
+                    answer3.text = "Պիսկիղայի"
+                    answer4.text = "Անանիայի"
+                    number += 1
+                }
+                2 -> {
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    question.text = "Քանի տարեկանում մահացավ Մովսեսը"
+                    answer1.text = "130"
+                    answer2.text = "100"
+                    answer3.text = "125"
+                    answer4.text = "120"
+                    number += 1
+                }
+                3 -> {
+                    question.text = "Քանի որդի ուներ Նոյը"
+                    answer1.text = "1"
+                    answer2.text = "5"
+                    answer3.text = "10"
+                    answer4.text = "3"
+                    number += 1
+                }
+                4 -> {
+                    question.text = "ինչ էր այն ծառայի անունը որի ականջը կտրեց Պետրոսը"
+                    answer1.text = "Բէովր"
+                    answer2.text = "Ամրամ"
+                    answer3.text = "Նավե"
+                    answer4.text = "Մաղքոս"
+                    number += 1
+                }
+                5 -> {
+                    end.visibility = View.VISIBLE
+                    buttonRestart.visibility = View.VISIBLE
+                    answer1.visibility = View.INVISIBLE
+                    answer2.visibility = View.INVISIBLE
+                    answer3.visibility = View.INVISIBLE
+                    answer4.visibility = View.INVISIBLE
+                    question.visibility = View.INVISIBLE
+                    buttonStart.visibility = View.INVISIBLE
+                }
             }
         }
 
         answer3.setOnClickListener {
-            if (number == 0) {
-                question.setText("Ով ուրացավ Հիսուսին")
-                answer1.setText("Թովմասը")
-                answer2.setText("Սողոսը")
-                answer3.setText("Պետրոսը")
-                answer4.setText("Հուդան")
-                number += 1
-            } else if (number == 1) {
-                counter.text = counter.text.toString().toInt().plus(5).toString()
-                question.setText("Ում մասին էր վկայում Հիսուսը <Ճշմարիտ ասում եմ ձեզ այստեղ կանգնածներից ոմանք կան,որ մահ չեն տեսնի, մինչև որ չտեսնեն Աստծո արքայությունը եկած")
-                answer1.setText("Հովնանի")
-                answer2.setText("Հովհաննեսի")
-                answer3.setText("Պիսկիղայի")
-                answer4.setText("Անանիայի")
-                number += 1
-            } else if (number == 2) {
-                question.setText("Քանի տարեկանում մահացավ Մովսեսը")
-                answer1.setText("130")
-                answer2.setText("100")
-                answer3.setText("125")
-                answer4.setText("120")
-                number += 1
-            } else if (number == 3) {
-                question.setText("Քանի որդի ուներ Նոյը")
-                answer1.setText("1")
-                answer2.setText("5")
-                answer3.setText("10")
-                answer4.setText("3")
-                number += 1
-            } else if (number == 4) {
-                question.setText("ինչ էր այն ծառայի անունը որի ականջը կտրեց Պետրոսը")
-                answer1.setText("Բէովր")
-                answer2.setText("Ամրամ")
-                answer3.setText("Նավե")
-                answer4.setText("Մաղքոս")
-                number += 1
-            } else if (number == 5) {
-                text.visibility = View.VISIBLE
-                buttonRestart.visibility = View.VISIBLE
-                answer1.visibility = View.INVISIBLE
-                answer2.visibility = View.INVISIBLE
-                answer3.visibility = View.INVISIBLE
-                answer4.visibility = View.INVISIBLE
-                question.visibility = View.INVISIBLE
-                buttonStart.visibility = View.INVISIBLE
+            when (number) {
+                0 -> {
+                    question.text = "Ով ուրացավ Հիսուսին"
+                    answer1.text = "Թովմասը"
+                    answer2.text = "Սողոսը"
+                    answer3.text = "Պետրոսը"
+                    answer4.text = "Հուդան"
+                    number += 1
+                }
+                1 -> {
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    question.text =
+                        "Ում մասին էր վկայում Հիսուսը <Ճշմարիտ ասում եմ ձեզ այստեղ կանգնածներից ոմանք կան,որ մահ չեն տեսնի, մինչև որ չտեսնեն Աստծո արքայությունը եկած"
+                    answer1.text = "Հովնանի"
+                    answer2.text = "Հովհաննեսի"
+                    answer3.text = "Պիսկիղայի"
+                    answer4.text = "Անանիայի"
+                    number += 1
+                }
+                2 -> {
+                    question.text = "Քանի տարեկանում մահացավ Մովսեսը"
+                    answer1.text = "130"
+                    answer2.text = "100"
+                    answer3.text = "125"
+                    answer4.text = "120"
+                    number += 1
+                }
+                3 -> {
+                    question.text = "Քանի որդի ուներ Նոյը"
+                    answer1.text = "1"
+                    answer2.text = "5"
+                    answer3.text = "10"
+                    answer4.text = "3"
+                    number += 1
+                }
+                4 -> {
+                    question.text = "ինչ էր այն ծառայի անունը որի ականջը կտրեց Պետրոսը"
+                    answer1.text = "Բէովր"
+                    answer2.text = "Ամրամ"
+                    answer3.text = "Նավե"
+                    answer4.text = "Մաղքոս"
+                    number += 1
+                }
+                5 -> {
+                    end.visibility = View.VISIBLE
+                    buttonRestart.visibility = View.VISIBLE
+                    answer1.visibility = View.INVISIBLE
+                    answer2.visibility = View.INVISIBLE
+                    answer3.visibility = View.INVISIBLE
+                    answer4.visibility = View.INVISIBLE
+                    question.visibility = View.INVISIBLE
+                    buttonStart.visibility = View.INVISIBLE
+                }
             }
         }
 
         answer4.setOnClickListener {
-            if (number == 0) {
-                question.setText("Ով ուրացավ Հիսուսին")
-                answer1.setText("Թովմասը")
-                answer2.setText("Սողոսը")
-                answer3.setText("Պետրոսը")
-                answer4.setText("Հուդան")
-                number += 1
-            } else if (number == 1) {
-                question.setText("Ում մասին էր վկայում Հիսուսը <Ճշմարիտ ասում եմ ձեզ այստեղ կանգնածներից ոմանք կան,որ մահ չեն տեսնի, մինչև որ չտեսնեն Աստծո արքայությունը եկած")
-                answer1.setText("Հովնանի")
-                answer2.setText("Հովհաննեսի")
-                answer3.setText("Պիսկիղայի")
-                answer4.setText("Անանիայի")
-                number += 1
-            } else if (number == 2) {
-                question.setText("Քանի տարեկանում մահացավ Մովսեսը")
-                answer1.setText("130")
-                answer2.setText("100")
-                answer3.setText("125")
-                answer4.setText("120")
-                number += 1
-            } else if (number == 3) {
-                counter.text = counter.text.toString().toInt().plus(5).toString()
-                question.setText("Քանի որդի ուներ Նոյը")
-                answer1.setText("1")
-                answer2.setText("5")
-                answer3.setText("10")
-                answer4.setText("3")
-                number += 1
-            } else if (number == 4) {
-                counter.text = counter.text.toString().toInt().plus(5).toString()
-                question.setText("ինչ էր այն ծառայի անունը որի ականջը կտրեց Պետրոսը")
-                answer1.setText("Բէովր")
-                answer2.setText("Ամրամ")
-                answer3.setText("Նավե")
-                answer4.setText("Մաղքոս")
-                number += 1
-            } else if (number == 5) {
-                counter.text = counter.text.toString().toInt().plus(5).toString()
-                text.visibility = View.VISIBLE
-                buttonRestart.visibility = View.VISIBLE
-                answer1.visibility = View.INVISIBLE
-                answer2.visibility = View.INVISIBLE
-                answer3.visibility = View.INVISIBLE
-                answer4.visibility = View.INVISIBLE
-                question.visibility = View.INVISIBLE
-                buttonStart.visibility = View.INVISIBLE
+            when (number) {
+                0 -> {
+                    question.text = "Ով ուրացավ Հիսուսին"
+                    answer1.text = "Թովմասը"
+                    answer2.text = "Սողոսը"
+                    answer3.text = "Պետրոսը"
+                    answer4.text = "Հուդան"
+                    number += 1
+                }
+                1 -> {
+                    question.text =
+                        "Ում մասին էր վկայում Հիսուսը <Ճշմարիտ ասում եմ ձեզ այստեղ կանգնածներից ոմանք կան,որ մահ չեն տեսնի, մինչև որ չտեսնեն Աստծո արքայությունը եկած"
+                    answer1.text = "Հովնանի"
+                    answer2.text = "Հովհաննեսի"
+                    answer3.text = "Պիսկիղայի"
+                    answer4.text = "Անանիայի"
+                    number += 1
+                }
+                2 -> {
+                    question.text = "Քանի տարեկանում մահացավ Մովսեսը"
+                    answer1.text = "130"
+                    answer2.text = "100"
+                    answer3.text = "125"
+                    answer4.text = "120"
+                    number += 1
+                }
+                3 -> {
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    question.text = "Քանի որդի ուներ Նոյը"
+                    answer1.text = "1"
+                    answer2.text = "5"
+                    answer3.text = "10"
+                    answer4.text = "3"
+                    number += 1
+                }
+                4 -> {
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    question.text = "ինչ էր այն ծառայի անունը որի ականջը կտրեց Պետրոսը"
+                    answer1.text = "Բէովր"
+                    answer2.text = "Ամրամ"
+                    answer3.text = "Նավե"
+                    answer4.text = "Մաղքոս"
+                    number += 1
+                }
+                5 -> {
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    end.visibility = View.VISIBLE
+                    buttonRestart.visibility = View.VISIBLE
+                    answer1.visibility = View.INVISIBLE
+                    answer2.visibility = View.INVISIBLE
+                    answer3.visibility = View.INVISIBLE
+                    answer4.visibility = View.INVISIBLE
+                    question.visibility = View.INVISIBLE
+                    buttonStart.visibility = View.INVISIBLE
+                }
             }
         }
 
