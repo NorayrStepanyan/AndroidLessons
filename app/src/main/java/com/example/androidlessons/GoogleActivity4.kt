@@ -1,5 +1,6 @@
 package com.example.androidlessons
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 
 class GoogleActivity4 : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

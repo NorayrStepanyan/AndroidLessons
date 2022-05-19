@@ -11,6 +11,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="white2">#6AFFFFFF</color>
+    <color name="white3">#6AE8B1B1</color>
+    <color name="dark_gray">#46353333</color>
     <color name="transparent">#00000000</color>
     <color name="white_50">#FFFFFF</color>
     <color name="yellow">#FFEB3B</color>
