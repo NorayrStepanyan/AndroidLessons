@@ -7,6 +7,7 @@
     android:background="@color/dark_gray"
     tools:context=".GameActivity1">
 
+
     <ImageView
         android:id="@+id/sadSmile"
         android:layout_width="70dp"
@@ -103,10 +104,11 @@
 
     <TextView
         android:id="@+id/question"
-        android:layout_width="wrap_content"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:gravity="center"
+        android:background="@color/white5"
+        android:gravity="center_horizontal"
         android:paddingStart="10sp"
         android:text="հԱՐՑԸ"
         android:textColor="@color/white3"
@@ -124,7 +126,8 @@
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginTop="360dp"
-        android:layout_marginEnd="175dp"
+        android:layout_marginEnd="185dp"
+        android:background="@color/white4"
         android:gravity="start"
         android:text="պատասխան"
         android:textColor="@color/white2"
@@ -139,8 +142,9 @@
         android:id="@+id/answer2"
         android:layout_width="175dp"
         android:layout_height="40dp"
-        android:layout_marginStart="170dp"
+        android:layout_marginStart="185dp"
         android:layout_marginTop="360dp"
+        android:background="@color/white4"
         android:gravity="start"
         android:text="պատասխան"
         android:textColor="@color/white2"
@@ -156,7 +160,8 @@
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginTop="480dp"
-        android:layout_marginEnd="175dp"
+        android:layout_marginEnd="185dp"
+        android:background="@color/white4"
         android:gravity="start"
         android:text="պատասխան"
         android:textColor="@color/white2"
@@ -171,8 +176,9 @@
         android:id="@+id/answer4"
         android:layout_width="175dp"
         android:layout_height="40dp"
-        android:layout_marginStart="170dp"
+        android:layout_marginStart="185dp"
         android:layout_marginTop="480dp"
+        android:background="@color/white4"
         android:gravity="start"
         android:text="պատասխան"
         android:textColor="@color/white2"

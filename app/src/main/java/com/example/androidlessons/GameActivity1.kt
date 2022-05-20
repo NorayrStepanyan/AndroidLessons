@@ -2,14 +2,14 @@ package com.example.androidlessons
 
 import android.annotation.SuppressLint
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 
-//import kotlin.random.Random
+
 
 class GameActivity1 : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
@@ -19,7 +19,6 @@ class GameActivity1 : AppCompatActivity() {
         setContentView(R.layout.activity_game1)
 
         var number = 0
-//        val randomValues = List(2) { Random.nextInt(0, 1) }
         val sadSmile = findViewById<ImageView>(R.id.sadSmile)
         val happySmile = findViewById<ImageView>(R.id.happySmile)
         val smile = findViewById<ImageView>(R.id.smile)
@@ -42,7 +41,9 @@ class GameActivity1 : AppCompatActivity() {
             "Ով էր Հակոբի աները",
             "Նոյի որդիներն են Սեմը, Քամը, ․․․",
             "Պողոսի իրական անունը",
-            "Նոյի հոր անունը"
+            "Նոյի հոր անունը",
+            "Ով էր Սյուքեմի հայրը",
+            "Ով էր Մովսեսի և Ահարոնի հայրը"
         )
         val answerList1 =
             arrayListOf(
@@ -55,7 +56,9 @@ class GameActivity1 : AppCompatActivity() {
                 "Բաղամը",
                 "Հաբեթը",
                 "Ղուկաս",
-                "Աբրահամ"
+                "Աբրահամ",
+                "Սաղովմե",
+                "Շմավոնը"
             )
         val answerList2 =
             arrayListOf(
@@ -68,7 +71,9 @@ class GameActivity1 : AppCompatActivity() {
                 "Լաբանը",
                 "Իսմայելը",
                 "Սեհոն",
-                "Ղամեք"
+                "Ղամեք",
+                "Եմորը",
+                "Մեղան"
             )
         val answerList3 =
             arrayListOf(
@@ -81,7 +86,9 @@ class GameActivity1 : AppCompatActivity() {
                 "Բաղակը",
                 "Կայենը",
                 "Սողոս",
-                "Ղովտ"
+                "Ղովտ",
+                "Եսերուն",
+                "Ամրամը"
             )
         val answerList4 =
             arrayListOf(
@@ -94,7 +101,9 @@ class GameActivity1 : AppCompatActivity() {
                 "Մելքիսեդեկը",
                 "Ղամեքը",
                 "Հեղի",
-                "Հաբիե"
+                "Հաբիե",
+                "Թէոփիլե",
+                "Ռուբենը"
             )
 
 
@@ -110,6 +119,8 @@ class GameActivity1 : AppCompatActivity() {
         answer4.visibility = View.INVISIBLE
         question.visibility = View.INVISIBLE
         end.setTextColor(getColor(R.color.white2))
+
+
 
         buttonStart.setOnClickListener {
             smile.visibility = View.VISIBLE
@@ -128,7 +139,7 @@ class GameActivity1 : AppCompatActivity() {
         }
 
         buttonRestart.setOnClickListener {
-            number = 1
+            number = 0
             counter.text = "0"
             end.visibility = View.INVISIBLE
             counter.visibility = View.INVISIBLE
@@ -242,6 +253,28 @@ class GameActivity1 : AppCompatActivity() {
                     number += 1
                 }
                 9 -> {
+                    sadSmile.visibility = View.VISIBLE
+                    happySmile.visibility = View.INVISIBLE
+                    counter.text = counter.text.toString().toInt().minus(5).toString()
+                    question.text = questionList[10]
+                    answer1.text = answerList1[10]
+                    answer2.text = answerList2[10]
+                    answer3.text = answerList3[10]
+                    answer4.text = answerList4[10]
+                    number += 1
+                }
+                10 -> {
+                    sadSmile.visibility = View.VISIBLE
+                    happySmile.visibility = View.INVISIBLE
+                    counter.text = counter.text.toString().toInt().minus(5).toString()
+                    question.text = questionList[11]
+                    answer1.text = answerList1[11]
+                    answer2.text = answerList2[11]
+                    answer3.text = answerList3[11]
+                    answer4.text = answerList4[11]
+                    number += 1
+                }
+                11 -> {
                     counter.text = counter.text.toString().toInt().minus(5).toString()
                     end.text = "Դուք հավաքել եք ${counter.text} միավոր"
                     end.visibility = View.VISIBLE
@@ -260,6 +293,11 @@ class GameActivity1 : AppCompatActivity() {
                     if (counter.text.toString().toInt().toString() > 0.toString()) {
                         sadSmile.visibility = View.INVISIBLE
                         happySmile.visibility = View.VISIBLE
+                    }
+                    if (counter.text.toString().toInt().toString() == 0.toString()) {
+                        sadSmile.visibility = View.INVISIBLE
+                        happySmile.visibility = View.INVISIBLE
+                        smile.visibility = View.VISIBLE
                     }
                 }
             }
@@ -368,9 +406,31 @@ class GameActivity1 : AppCompatActivity() {
                     number += 1
                 }
                 9 -> {
+                    sadSmile.visibility = View.INVISIBLE
+                    happySmile.visibility = View.VISIBLE
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    question.text = questionList[10]
+                    answer1.text = answerList1[10]
+                    answer2.text = answerList2[10]
+                    answer3.text = answerList3[10]
+                    answer4.text = answerList4[10]
+                    number += 1
+                }
+                10 -> {
+                    sadSmile.visibility = View.INVISIBLE
+                    happySmile.visibility = View.VISIBLE
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    question.text = questionList[11]
+                    answer1.text = answerList1[11]
+                    answer2.text = answerList2[11]
+                    answer3.text = answerList3[11]
+                    answer4.text = answerList4[11]
+                    number += 1
+                }
+                11 -> {
                     sadSmile.visibility = View.VISIBLE
                     happySmile.visibility = View.INVISIBLE
-                    counter.text = counter.text.toString().toInt().plus(5).toString()
+                    counter.text = counter.text.toString().toInt().minus(5).toString()
                     end.text = "Դուք հավաքել եք ${counter.text} միավոր"
                     end.visibility = View.VISIBLE
                     buttonRestart.visibility = View.VISIBLE
@@ -388,6 +448,11 @@ class GameActivity1 : AppCompatActivity() {
                     if (counter.text.toString().toInt().toString() > 0.toString()) {
                         sadSmile.visibility = View.INVISIBLE
                         happySmile.visibility = View.VISIBLE
+                    }
+                    if (counter.text.toString().toInt().toString() == 0.toString()) {
+                        sadSmile.visibility = View.INVISIBLE
+                        happySmile.visibility = View.INVISIBLE
+                        smile.visibility = View.VISIBLE
                     }
                 }
             }
@@ -499,6 +564,28 @@ class GameActivity1 : AppCompatActivity() {
                     sadSmile.visibility = View.VISIBLE
                     happySmile.visibility = View.INVISIBLE
                     counter.text = counter.text.toString().toInt().minus(5).toString()
+                    question.text = questionList[10]
+                    answer1.text = answerList1[10]
+                    answer2.text = answerList2[10]
+                    answer3.text = answerList3[10]
+                    answer4.text = answerList4[10]
+                    number += 1
+                }
+                10 -> {
+                    sadSmile.visibility = View.VISIBLE
+                    happySmile.visibility = View.INVISIBLE
+                    counter.text = counter.text.toString().toInt().minus(5).toString()
+                    question.text = questionList[11]
+                    answer1.text = answerList1[11]
+                    answer2.text = answerList2[11]
+                    answer3.text = answerList3[11]
+                    answer4.text = answerList4[11]
+                    number += 1
+                }
+                11 -> {
+                    sadSmile.visibility = View.VISIBLE
+                    happySmile.visibility = View.INVISIBLE
+                    counter.text = counter.text.toString().toInt().plus(5).toString()
                     end.text = "Դուք հավաքել եք ${counter.text} միավոր"
                     end.visibility = View.VISIBLE
                     buttonRestart.visibility = View.VISIBLE
@@ -516,6 +603,11 @@ class GameActivity1 : AppCompatActivity() {
                     if (counter.text.toString().toInt().toString() > 0.toString()) {
                         sadSmile.visibility = View.INVISIBLE
                         happySmile.visibility = View.VISIBLE
+                    }
+                    if (counter.text.toString().toInt().toString() == 0.toString()) {
+                        sadSmile.visibility = View.INVISIBLE
+                        happySmile.visibility = View.INVISIBLE
+                        smile.visibility = View.VISIBLE
                     }
                 }
             }
@@ -627,6 +719,28 @@ class GameActivity1 : AppCompatActivity() {
                     sadSmile.visibility = View.VISIBLE
                     happySmile.visibility = View.INVISIBLE
                     counter.text = counter.text.toString().toInt().minus(5).toString()
+                    question.text = questionList[10]
+                    answer1.text = answerList1[10]
+                    answer2.text = answerList2[10]
+                    answer3.text = answerList3[10]
+                    answer4.text = answerList4[10]
+                    number += 1
+                }
+                10 -> {
+                    sadSmile.visibility = View.VISIBLE
+                    happySmile.visibility = View.INVISIBLE
+                    counter.text = counter.text.toString().toInt().minus(5).toString()
+                    question.text = questionList[11]
+                    answer1.text = answerList1[11]
+                    answer2.text = answerList2[11]
+                    answer3.text = answerList3[11]
+                    answer4.text = answerList4[11]
+                    number += 1
+                }
+                11 -> {
+                    sadSmile.visibility = View.VISIBLE
+                    happySmile.visibility = View.INVISIBLE
+                    counter.text = counter.text.toString().toInt().minus(5).toString()
                     end.text = "Դուք հավաքել եք ${counter.text} միավոր"
                     end.visibility = View.VISIBLE
                     buttonRestart.visibility = View.VISIBLE
@@ -644,6 +758,11 @@ class GameActivity1 : AppCompatActivity() {
                     if (counter.text.toString().toInt().toString() > 0.toString()) {
                         sadSmile.visibility = View.INVISIBLE
                         happySmile.visibility = View.VISIBLE
+                    }
+                    if (counter.text.toString().toInt().toString() == 0.toString()) {
+                        sadSmile.visibility = View.INVISIBLE
+                        happySmile.visibility = View.INVISIBLE
+                        smile.visibility = View.VISIBLE
                     }
                 }
             }
